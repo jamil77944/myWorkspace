@@ -2,12 +2,12 @@ name: Create Artifact
 
 on: push
 
+env:
+  GLOBAL_ENV_VAR: myArtifact
+
 jobs:
   create-artifact:
     runs-on: ubuntu-latest
-    
-    env:
-      GLOBAL_ENV_VAR: 'Global Value'
       
     steps:
     - name: Checkout Code
@@ -16,5 +16,5 @@ jobs:
     - name: Create Artifact
       uses: actions/upload-artifact@v2
       with:
-        name: thisArt
+        name: ${{ env.GLOBAL_ENV_VAR }}
         path: .
