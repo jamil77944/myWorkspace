@@ -1,0 +1,20 @@
+name: Create Artifact
+
+on: push
+
+jobs:
+  create-artifact:
+    runs-on: ubuntu-latest
+    
+    env:
+      GLOBAL_ENV_VAR: 'Global Value'
+      
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+      
+    - name: Create Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: thisArt
+        path: .
