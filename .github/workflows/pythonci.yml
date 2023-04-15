@@ -3,7 +3,6 @@ name: Python COde
 on: [push]
 
 jobs:
-
   test:
 
     runs-on: ubuntu-latest
