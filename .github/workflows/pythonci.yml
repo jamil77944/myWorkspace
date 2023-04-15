@@ -3,7 +3,7 @@ name: Python COde
 on: [push]
 
 jobs:
-  test:
+  test-e:
 
     runs-on: ubuntu-latest
 
@@ -19,9 +19,8 @@ jobs:
         pip install -r requirements.txt # Replace with the name of your requirements file
     - name: Run Python script
       run: python script.py # Replace with the name of your Python script
-      
-   build:
-    
+  
+  build:  
      needs: test
      runs-on: ubuntu-latest
     
